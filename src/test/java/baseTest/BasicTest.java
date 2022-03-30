@@ -1,5 +1,6 @@
 package baseTest;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import helpers.JsonValidatorHelper;
 
@@ -14,6 +15,7 @@ public class BasicTest {
 	JsonValidatorHelper jsonValidator = new JsonValidatorHelper();
 
 	@Test
+	@DisplayName("Health check before every test")
 	public void healthCheck(){
 		jsonValidator.validateJsonSchema(POSTS_URL, POSTS_JSON_PATH);
 		jsonValidator.validateJsonSchema(USERS_URL, USERS_JSON_PATH);

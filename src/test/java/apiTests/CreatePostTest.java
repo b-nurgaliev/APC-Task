@@ -1,9 +1,11 @@
 package apiTests;
 
 import baseTest.BasicTest;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -15,10 +17,12 @@ import static io.restassured.RestAssured.given;
 public class CreatePostTest extends BasicTest {
 
 	@Test
+	@DisplayName("New post adding function test")
 	public void createPost() {
 		File requestBodyFile = new File("src/main/resources/postPayload.json");
 
 		Response response = given()
+				.filter(new AllureRestAssured())
 				.baseUri(POSTS_URL)
 				.contentType(ContentType.JSON)
 				.body(requestBodyFile)
