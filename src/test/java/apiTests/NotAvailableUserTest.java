@@ -9,17 +9,29 @@ import org.junit.jupiter.api.Test;
 import static constants.Constants.USERS_URL;
 import static io.restassured.RestAssured.given;
 
-public class CheckUserWebsite extends BasicTest {
+public class NotAvailableUserTest extends BasicTest {
 
 	@Test
-	public void checkUserWebsite(){
+	public void getUserWithIntegerId() {
 		Response response = given()
 				.baseUri(USERS_URL)
-				.basePath("/2")
+				.basePath("/9999")
 				.contentType(ContentType.JSON)
 				.when().get()
 				.then()
 				.extract().response();
-		Assertions.assertEquals("anastasia.net", response.jsonPath().getString("website"));
+		Assertions.assertEquals(404, response.statusCode());
+	}
+
+	@Test
+	public void getUserWithStringId() {
+		Response response = given()
+				.baseUri(USERS_URL)
+				.basePath("/qwertyasdfg")
+				.contentType(ContentType.JSON)
+				.when().get()
+				.then()
+				.extract().response();
+		Assertions.assertEquals(404, response.statusCode());
 	}
 }

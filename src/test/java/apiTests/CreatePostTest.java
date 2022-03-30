@@ -1,11 +1,9 @@
 package apiTests;
 
 import baseTest.BasicTest;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -14,7 +12,7 @@ import static constants.Constants.POSTS_URL;
 import static io.restassured.RestAssured.given;
 
 
-public class CreatePost extends BasicTest {
+public class CreatePostTest extends BasicTest {
 
 	@Test
 	public void createPost() {
