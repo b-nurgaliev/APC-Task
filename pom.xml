@@ -20,7 +20,7 @@
 		<junit.version>5.7.0</junit.version>
 		<allure.version>2.13.6</allure.version>
 		<allure.maven>2.10.0</allure.maven>
-		<projectlombok.version>1.18.16</projectlombok.version>
+		<projectlombok.version>1.18.20</projectlombok.version>
 	</properties>
 	<dependencies>
 		<dependency>
