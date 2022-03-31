@@ -1,7 +1,5 @@
 package helpers;
 
-import static constants.Constants.POSTS_URL;
-import static constants.Constants.USERS_URL;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
