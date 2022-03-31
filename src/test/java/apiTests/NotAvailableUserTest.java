@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static constants.Constants.USERS_URL;
+import static constants.Constants.*;
 import static io.restassured.RestAssured.given;
 
 public class NotAvailableUserTest extends BasicTest {
@@ -19,7 +19,7 @@ public class NotAvailableUserTest extends BasicTest {
 		Response response = given()
 				.filter(new AllureRestAssured())
 				.baseUri(USERS_URL)
-				.basePath("/9999")
+				.basePath(USER_NEGATIVE_INT)
 				.contentType(ContentType.JSON)
 				.when().get()
 				.then()
@@ -33,7 +33,7 @@ public class NotAvailableUserTest extends BasicTest {
 		Response response = given()
 				.filter(new AllureRestAssured())
 				.baseUri(USERS_URL)
-				.basePath("/qwertyasdfg")
+				.basePath(USER_NEGATIVE_STRING)
 				.contentType(ContentType.JSON)
 				.when().get()
 				.then()

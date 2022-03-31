@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 public class CheckUserWebsiteTest extends BasicTest {
 
 	@Test
-	@DisplayName("Checking that user has valid email")
+	@DisplayName("Checking that user has website")
 	public void checkUserWebsite(){
 		Response response = given()
 				.filter(new AllureRestAssured())
